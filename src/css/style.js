@@ -27,3 +27,11 @@ export const filterDiv = {
 export const marginBottom5 = {
   marginBottom: "5px",
 };
+export const loaderStyle = {
+  position: "relative",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  marginBottom: "20px",
+  marginTop: "60px",
+};

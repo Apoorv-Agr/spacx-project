@@ -35,6 +35,23 @@ const getLaunchDataReducer = (state = initialAppState, action = {}) => {
         error: action.payload,
         showLoader: false,
       };
+    case GET_DATA_ON_FILTER_PENDING:
+      return { ...state, data: [], isPending: true, showLoader: true };
+    case GET_DATA_ON_FILTER_SUCCESS:
+      return {
+        ...state,
+        data: action.payload,
+        isPending: false,
+        showLoader: false,
+      };
+    case GET_DATA_ON_FILTER_FAIL:
+      return {
+        ...state,
+        data: [],
+        isPending: false,
+        error: action.payload,
+        showLoader: false,
+      };
     default:
       return state;
   }

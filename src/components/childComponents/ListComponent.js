@@ -1,17 +1,30 @@
 import React from "react";
-import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Card,
+  ListGroup,
+  ListGroupItem,
+  Spinner,
+} from "react-bootstrap";
 import { connect } from "react-redux";
+import { loaderStyle } from "../../css/style";
 
 class ListComponent extends React.Component {
   state = {};
   render() {
-    // console.log("props", this.props.getLaunchData);
-    const { data } = this.props.getLaunchData;
-    console.log("props", data);
+    const { data, showLoader } = this.props.getLaunchData;
     return (
       <Col lg={10} xs={12}>
         <Row>
-          {data &&
+          {showLoader ? (
+            <Col lg={3} xs={12} style={loaderStyle}>
+              <span>
+                <b>Loading...</b>
+              </span>
+              <Spinner animation="border" variant="primary" />
+            </Col>
+          ) : data && data.length ? (
             data.map((el, idx) => {
               const {
                 launch_date_unix,
@@ -33,14 +46,12 @@ class ListComponent extends React.Component {
                     <Card.Img variant="top" src={links.mission_patch_small} />
                     <Card.Body>
                       <Card.Title>{rocket.rocket_name}</Card.Title>
-                      <Card.Text>
-                        <b>Mission Ids: </b>
-                        <ul>
-                          {mission_id.map((el, idx) => {
-                            return <li key={`${el}_${idx}`}>{el}</li>;
-                          })}
-                        </ul>
-                      </Card.Text>
+                      <b>Mission Ids: </b>
+                      <ul>
+                        {mission_id.map((el, idx) => {
+                          return <li key={`${el}_${idx}`}>{el}</li>;
+                        })}
+                      </ul>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                       <ListGroupItem>
@@ -53,7 +64,8 @@ class ListComponent extends React.Component {
                       </ListGroupItem>
                       <ListGroupItem>
                         <b>Successful Landing: </b>
-                        {rocket.cores && rocket.cores[0].land_success
+                        {rocket.first_stage.cores &&
+                        rocket.first_stage.cores[0].land_success
                           ? "true"
                           : "false"}
                       </ListGroupItem>
@@ -61,7 +73,14 @@ class ListComponent extends React.Component {
                   </Card>
                 </Col>
               );
-            })}
+            })
+          ) : (
+            <Col lg={3} xs={12} style={loaderStyle}>
+              <span>
+                <b>Data Not Found!</b>
+              </span>
+            </Col>
+          )}
         </Row>
       </Col>
     );

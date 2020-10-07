@@ -8,6 +8,7 @@ class FilterDisplayComponent extends Component {
     this.state = {};
   }
   render() {
+    const { selectedVal, onBtnClick } = this.props;
     return (
       <>
         <div style={textAlign}>{this.props.heading}</div>
@@ -16,14 +17,30 @@ class FilterDisplayComponent extends Component {
           {this.props.typeData === "num"
             ? this.props.dataArr.map((val, idx) => {
                 return (
-                  <Button key={`${val}_${idx}`} variant="success" size="sm" active = { val === this.props.selectedVal ? true : false}>
+                  <Button
+                    key={`${val}_${idx}`}
+                    variant="success"
+                    size="sm"
+                    active={val === selectedVal ? true : false}
+                    onClick={() => {
+                      onBtnClick(val);
+                    }}
+                  >
                     {val}
                   </Button>
                 );
               })
             : this.props.dataArr.map((val, idx) => {
                 return (
-                  <Button key={`${val}_${idx}`} variant="success" size="sm">
+                  <Button
+                    key={`${val}_${idx}`}
+                    variant="success"
+                    size="sm"
+                    active={val === selectedVal ? true : false}
+                    onClick={() => {
+                      onBtnClick(val);
+                    }}
+                  >
                     {val === true ? "True" : "False"}
                   </Button>
                 );

@@ -9,15 +9,12 @@ import { getLaunchData } from "../../actions";
 import { styleObj } from "../../css/style";
 
 class ContainerComponent extends React.Component {
-  state = { loading: false };
+  state = {};
   componentDidMount() {
     this.props.getLaunchDataAction();
   }
-  onChange = (checked) => {
-    this.setState({ loading: !checked });
-  };
+
   render() {
-    const { loading } = this.state;
     return (
       <Container fluid={true} style={styleObj}>
         <HeaderComponent />
@@ -39,7 +36,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 const mapStateToProps = (appState) => {
   return {
-    appState,
+    loader: appState.getLaunchDataReducer.showLoader,
   };
 };
 
