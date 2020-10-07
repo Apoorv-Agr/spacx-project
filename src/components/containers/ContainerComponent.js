@@ -4,10 +4,15 @@ import FilterComponent from "../childComponents/FilterComponent";
 import ListComponent from "../childComponents/ListComponent";
 import HeaderComponent from "../childComponents/HeaderComponent";
 import FooterComponent from "../childComponents/FooterComponent";
+import { connect } from "react-redux";
+import { getLaunchData } from "../../actions";
 import { styleObj } from "../../css/style";
 
 class ContainerComponent extends React.Component {
   state = { loading: false };
+  componentDidMount() {
+    this.props.getLaunchDataAction();
+  }
   onChange = (checked) => {
     this.setState({ loading: !checked });
   };
@@ -25,5 +30,17 @@ class ContainerComponent extends React.Component {
     );
   }
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getLaunchDataAction: () => {
+      dispatch(getLaunchData());
+    },
+  };
+};
+const mapStateToProps = (appState) => {
+  return {
+    appState,
+  };
+};
 
-export default ContainerComponent;
+export default connect(mapStateToProps, mapDispatchToProps)(ContainerComponent);

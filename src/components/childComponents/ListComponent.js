@@ -1,192 +1,77 @@
 import React from "react";
-import {
-    Row,
-    Col,
-    Card,
-    ListGroup,
-    ListGroupItem,
-  } from "react-bootstrap";
+import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { connect } from "react-redux";
 
 class ListComponent extends React.Component {
   state = {};
   render() {
+    // console.log("props", this.props.getLaunchData);
+    const { data } = this.props.getLaunchData;
+    console.log("props", data);
     return (
       <Col lg={10} xs={12}>
         <Row>
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
-
-          <Col lg={3} xs={12} style={{ marginBottom: "20px" }}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
-            </Card>
-          </Col>
+          {data &&
+            data.map((el, idx) => {
+              const {
+                launch_date_unix,
+                flight_number,
+                rocket,
+                links,
+                mission_id,
+                launch_year,
+                launch_success,
+              } = el;
+              return (
+                <Col
+                  key={`${launch_date_unix}_${flight_number}_${rocket.rocket_id}`}
+                  lg={3}
+                  xs={12}
+                  style={{ marginBottom: "20px" }}
+                >
+                  <Card>
+                    <Card.Img variant="top" src={links.mission_patch_small} />
+                    <Card.Body>
+                      <Card.Title>{rocket.rocket_name}</Card.Title>
+                      <Card.Text>
+                        <b>Mission Ids: </b>
+                        <ul>
+                          {mission_id.map((el, idx) => {
+                            return <li key={`${el}_${idx}`}>{el}</li>;
+                          })}
+                        </ul>
+                      </Card.Text>
+                    </Card.Body>
+                    <ListGroup className="list-group-flush">
+                      <ListGroupItem>
+                        <b>Launch Year: </b>
+                        {launch_year}
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        <b>Successful Launch: </b>
+                        {launch_success ? "true" : "false"}
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        <b>Successful Landing: </b>
+                        {rocket.cores && rocket.cores[0].land_success
+                          ? "true"
+                          : "false"}
+                      </ListGroupItem>
+                    </ListGroup>
+                  </Card>
+                </Col>
+              );
+            })}
         </Row>
       </Col>
     );
   }
 }
 
-export default ListComponent;
+const mapStateToProps = (appState) => {
+  return {
+    getLaunchData: appState.getLaunchDataReducer,
+  };
+};
+
+export default connect(mapStateToProps, {})(ListComponent);

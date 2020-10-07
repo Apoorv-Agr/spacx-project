@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import { Col, Button } from "react-bootstrap";
-import {
-  filterStyle,
-  textAlign,
-  horizontalLineObj,
-  filterDiv,
-} from "../../css/style";
+import { Button } from "react-bootstrap";
+import { textAlign, horizontalLineObj, filterDiv } from "../../css/style";
 
 class FilterDisplayComponent extends Component {
   constructor(props) {
@@ -21,14 +16,14 @@ class FilterDisplayComponent extends Component {
           {this.props.typeData === "num"
             ? this.props.dataArr.map((val, idx) => {
                 return (
-                  <Button key={`${val}_${idx}`} variant="primary" size="sm">
+                  <Button key={`${val}_${idx}`} variant="success" size="sm" active = { val === this.props.selectedVal ? true : false}>
                     {val}
                   </Button>
                 );
               })
             : this.props.dataArr.map((val, idx) => {
                 return (
-                  <Button key={`${val}_${idx}`} variant="primary" size="sm">
+                  <Button key={`${val}_${idx}`} variant="success" size="sm">
                     {val === true ? "True" : "False"}
                   </Button>
                 );

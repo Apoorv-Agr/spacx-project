@@ -1,15 +1,10 @@
 import React from "react";
-import { Col, Button } from "react-bootstrap";
-import {
-  filterStyle,
-  textAlign,
-  horizontalLineObj,
-  filterDiv,
-} from "../../css/style";
+import { Col } from "react-bootstrap";
+import { filterStyle } from "../../css/style";
 import { YEARS_ARR } from "../../constants";
 import FilterDisplayComponent from "./FilterDisplayComponent";
 class FilterComponent extends React.Component {
-  state = {};
+  state = { selectedVal: 2006 };
   render() {
     return (
       <Col lg={2} xs={12}>
@@ -18,6 +13,7 @@ class FilterComponent extends React.Component {
             heading="Launch Year"
             typeData="num"
             dataArr={YEARS_ARR}
+            selectedVal={this.state.selectedVal}
           />
           <br />
           <FilterDisplayComponent
