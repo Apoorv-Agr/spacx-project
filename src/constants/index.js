@@ -1,0 +1,19 @@
+export const GET_LIST_API_ON_LOAD_ACTION = "GET_LIST_API_ON_LOAD_ACTION";
+export const GET_LIST_API_ON_FILTER_ACTION = "GET_LIST_API_ON_FILTER_ACTION";
+export const YEARS_ARR = [
+  2006,
+  2007,
+  2008,
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+];

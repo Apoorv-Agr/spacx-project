@@ -4,10 +4,7 @@ import FilterComponent from "../childComponents/FilterComponent";
 import ListComponent from "../childComponents/ListComponent";
 import HeaderComponent from "../childComponents/HeaderComponent";
 import FooterComponent from "../childComponents/FooterComponent";
-
-const styleObj = {
-  backgroundColor: "#ebe9e9",
-};
+import { styleObj } from "../../css/style";
 
 class ContainerComponent extends React.Component {
   state = { loading: false };

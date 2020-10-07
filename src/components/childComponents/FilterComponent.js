@@ -1,37 +1,37 @@
 import React from "react";
 import { Col, Button } from "react-bootstrap";
+import {
+  filterStyle,
+  textAlign,
+  horizontalLineObj,
+  filterDiv,
+} from "../../css/style";
+import { YEARS_ARR } from "../../constants";
+import FilterDisplayComponent from "./FilterDisplayComponent";
 class FilterComponent extends React.Component {
   state = {};
   render() {
     return (
       <Col lg={2} xs={12}>
-        <div
-          style={{
-            backgroundColor: "rgb(254, 254, 254)",
-            borderRadius: "5px",
-            padding: "20px 0px 50px 0px",
-          }}
-        >
-          <div style={{ textAlign: "center" }}>Launch Year</div>
-          <hr
-            style={{
-              width: "50%",
-              margin: "10px auto",
-            }}
-          ></hr>
-          <div
-            style={{
-              justifyContent: "space-around",
-              display: "flex",
-            }}
-          >
-            <Button variant="primary" size="sm">
-              2006
-            </Button>{" "}
-            <Button variant="secondary" size="sm">
-              2007
-            </Button>
-          </div>
+        <div style={filterStyle}>
+          <FilterDisplayComponent
+            heading="Launch Year"
+            typeData="num"
+            dataArr={YEARS_ARR}
+          />
+          <br />
+          <FilterDisplayComponent
+            heading="Successful Launch"
+            typeData="bool"
+            dataArr={[true, false]}
+          />
+          <br />
+          <FilterDisplayComponent
+            heading="Successful Landing"
+            typeData="bool"
+            dataArr={[true, false]}
+          />
+          <br />
         </div>
       </Col>
     );
