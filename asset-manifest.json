@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/spacx-project/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/spacx-project/static/js/main.38a886fa.chunk.js",
+    "main.js.map": "/spacx-project/static/js/main.38a886fa.chunk.js.map",
+    "runtime-main.js": "/spacx-project/static/js/runtime-main.4e56c602.js",
+    "runtime-main.js.map": "/spacx-project/static/js/runtime-main.4e56c602.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/spacx-project/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.b156c24e.chunk.js": "/spacx-project/static/js/2.b156c24e.chunk.js",
+    "static/js/2.b156c24e.chunk.js.map": "/spacx-project/static/js/2.b156c24e.chunk.js.map",
+    "index.html": "/spacx-project/index.html",
+    "precache-manifest.0ee1d18a5eda05bcdec9e08d511cf3e6.js": "/spacx-project/precache-manifest.0ee1d18a5eda05bcdec9e08d511cf3e6.js",
+    "service-worker.js": "/spacx-project/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/spacx-project/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/spacx-project/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.b156c24e.chunk.js.LICENSE.txt": "/spacx-project/static/js/2.b156c24e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e56c602.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.b156c24e.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.38a886fa.chunk.js"
+  ]
+}
